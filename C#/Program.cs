@@ -1,0 +1,23 @@
+﻿internal class Program
+{
+    private static void Main(string[] args)
+    {
+        Console.WriteLine("Colegio Salesiano Don Bosco\nTiffany Alejandra Quex\nIV Bach sección C\nClave 12");
+        int[,] tabla = new int[5, 4];
+        int suma, num;
+        //Recorrer las 4 filas
+        for (int fila = 1; fila < 5; fila++)
+        {
+            suma = 0;
+            for (int columna = 1; columna < 4; columna++)//Recorrer 3 columnas
+            {
+                Console.WriteLine("Ingrese un número");
+                num = Convert.ToInt32(Console.ReadLine());
+                tabla[fila, columna] = num;
+                suma = suma + num; //Se va sumando cada número a la fila
+            }
+            //Mostrar el resultado de la suma por fila
+            Console.WriteLine("La suma de la fila "+fila+" es: "+suma);
+        }
+    }
+}
