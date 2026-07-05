@@ -1,0 +1,34 @@
+﻿internal class Program
+{
+    private static void Main(string[] args)
+    {
+        Console.WriteLine("Colegio Salesiano Don Bosco\nTiffany Alejandra Quex\nIV Bach sección C\nClave 12");
+        //Declarar e inicializar la matriz
+        int[,] datos = new int[5,5];
+
+        //Llenar la matríz
+        for (int fila = 0; fila < 4; fila++)
+        {
+            for (int columna = 0; columna < 4; columna++)
+            {
+                if (fila==columna)
+                {
+                    datos[fila, columna] = 1;
+                }
+                else
+                {
+                    datos[fila, columna] = 0;
+                }
+            }
+        }
+        //Mostrar la matriz
+        for (int fila = 0; fila < 4; fila++)
+        {
+            for (int columna = 0; columna < 4; columna++)
+            {
+                Console.Write(datos[fila, columna]+ " ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
