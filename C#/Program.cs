@@ -1,0 +1,41 @@
+﻿internal class Program
+{
+    private static void Main(string[] args)
+    {
+        Console.WriteLine("Colegio Salesiano Don Bosco\nTiffany Alejandra Quex\nIV Bach sección C\nClave 12");
+        //Declaración de variables para controlar su posición
+        int fila, columna, mayor, x, y;
+        int[,] tabla = new int[4,4];
+
+        //Llenar la matriz
+        for (fila = 0; fila < 4; fila++)
+        {
+            for (columna = 0; columna < 4; columna++)
+            {
+                Console.WriteLine("Ingrese un número");
+                tabla[fila, columna] = Convert.ToInt32(Console.ReadLine());
+            }
+        }
+        //Tomamos el primer dato como referencia
+        mayor = tabla[0, 0];
+        x = 0;
+        y = 0;
+
+        //Verificamos si existe un dato más grande
+        for (fila = 0; fila < 4; fila++)
+        {
+            for (columna = 0; columna < 4; columna++)
+            {
+                if (tabla[fila,columna] > mayor)
+                {
+                    mayor = tabla[fila, columna];
+                    x = fila;
+                    y = columna;
+                }
+            }
+        }
+        Console.WriteLine("El número mayor es: "+ mayor);
+        Console.WriteLine("Está en la fila " + (x+1));
+        Console.WriteLine("Y en la columna " + (y+1));
+    }
+}
